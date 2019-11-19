@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}AbielDev | Acerca de.{% endblock %}
+{% block content %} 
+	<div class="container">
+		<nav class="mt-2">
+		  	<div class="nav nav-tabs okis" id="nav-tab" role="tablist">
+		    	<a class="text-danger nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sobre mi.</a>
+		    	<a class="text-danger nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Donar.</a>
+		  	</div>
+		</nav>
+		<div class="tab-content" id="nav-tabContent">
+		  	<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+		  		<div class="row">
+		  			<div class="col-md-6 mt-3 border-left">
+		  				<div class="about-left-content">
+		  					<h3 class="text-center">Abiel Arcila</h3>
+							<p class="mt-3">
+								Email: abiel1999@gmail.com <br>
+								website: abieldev.io <br>
+								<br>
+								Entusiasta, ganas de aprender y me gusta resolver problemas. <br>
+							</p>
+							<h3>Areas con experiencias</h3>
+							<p>
+								<ul>
+								<li>Python, Django y Django API REST</li>
+								<li>Mayor experiencias en desarrollo backend</li>
+								<li>Ubuntu server</li>
+								<li>Nginx</li>
+								<li>Bootstrap</li>
+								<li>Extra: git, js y Digitalocean</li>
+								</ul>
+							</p>
+							<h3>Hobies</h3>
+							<p>
+								<ul>
+									<li>Me gusta ver peliculas</li>
+									<li>Me gusta Minecraft, terraria y shooters en general</li>
+								</ul>
+							</p>
+						</div>
+			  		</div>
+		  			<div class="col-md-6 border-right">
+		  				<div class="about-right-content mt-4">
+		  					<img class="img-fluid img-profile rounded mt-2 img1"  alt="Responsive image" src="{% static 'core/img/nginx.jpg' %}" style="width: 45%">
+		  					<img class="img-fluid img-profile rounded mt-2 img2"  alt="Responsive image" src="{% static 'core/img/django2.png' %}" style="width: 45%">
+		  					<img class="img-fluid img-profile rounded mt-2 img3"  alt="Responsive image" src="{% static 'core/img/python.png' %}" style="width: 100%">
+		  				</div>
+		  			</div>
+		  		</div>
+			</div>
+		  	<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+		  		<p class="mt-3">
+	  				Si deseas donarme dinero para pagar un servidor dedicado y tener un certificado ssl super caro puedes dornarme dandole click a este <a class="text-danger" href="https://paypal.me/abieldev">enlace</a> que te rediccionara a Paypal.
+	  			</p>
+	  		</div>
+
+		</div>
+	</div>
+{% endblock %}

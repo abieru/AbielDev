@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>diseño abiel dev</title>
+		<link rel="shortcut icon" href="img/code-solid.svg">
+		<link rel="stylesheet" href="vendor/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="https://unpkg.com/scrollreveal"></script>
+
+	</head>
+
+	<body>
+		<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light border-bottom">
+			<div class="container">
+				<span style="color: Tomato; font-size: 30px">
+					<i class="fas fa-code"></i>
+					<a class="navbar-brand text-danger" href="#">AbielDev</a>
+				</span>
+			  	
+			  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    	<span class="navbar-toggler-icon"></span>
+			  	</button>
+			  	<div class="collapse navbar-collapse" id="navbarNav">
+			    	<ul class="navbar-nav ml-auto">
+
+				      	<li class="nav-item active">
+				        	<a class="nav-link text-dark" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+				      	</li>
+				      	<li class="nav-item">
+				        	<a class="nav-link text-dark" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> Acerca de</a>	  
+				      	</li>
+
+			    	</ul>
+				  	<div class="dropdown">
+					  <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    	<i class="fas fa-folder"></i> Proyectos
+					  </button>
+					  	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						    <a class="dropdown-item text-danger" href="#">proyecto 1</a>
+						    <a class="dropdown-item text-danger" href="#">proyecto 2</a>
+						    <a class="dropdown-item text-danger" href="#">proyecto 3</a>
+						</div>
+					</div>			    	
+			  	</div>
+			</div>
+		</nav>
+
+		<header id="header">
+			<div class="container p-3">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="header-content-left">
+							<h1 class="display-4 my-auto text-danger">
+								<span style="font-size: 48px">
+								<i class="fas fa-laptop-code"></i> 
+								</span>bienvenido mano 
+							</h1>
+							<hr>
+							<p class="mt-5">
+								Este sitio web aparte de ser un hobbie personal, busca también tener alguno de los proyectos que voy desarrollando publicos, seria cool recibir opiniones a ver que les parece y sugerirme ideas para desarrollar.
+								Bueno aparte de eso si desean hablar conmigo con respecto al tema u otra cosa seria cool, igual les dejare algunas redes para contactarnos, hablar y tal vez hacer amistad.
+								Bueno basicamente es eso, en la parte superior vera un botón para ver alguno de los proyectos que vaya lanzando y también pueden ir a mi <a class="text-danger" href="https://github.com/4bi3l">Github</a> para ver el codigo fuente de los proyectos sin nada mas que decir espero que sea de tu agrado tu estancia por acá <i class="far fa-smile-beam fa-spin"></i>.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="header-content-right">
+							<img class="img-fluid img-profile rounded mt-2"  alt="Responsive image" src="img/code.jpg" style="width: 100%">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<hr class="container">
+		<footer class="footer-content mb-auto py-3">
+			<div class="container p-3">
+				<div class="row">
+					<div class="col-md-5 ml-auto">
+						<h3 class="d-block">Contactos.</h3>
+						<a class="text-dark" href="https://github.com/4bi3l">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-github mr-1"></i>
+							</span>
+						</a>
+						<a class="text-dark" href="https://www.linkedin.com/in/abiel-arcila-9a9304146">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-linkedin mr-1"></i>
+							</span>
+						</a>
+						<a class="text-dark" href="https://t.me/abiel13">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-telegram mr-1"></i>
+							</span>
+						</a>
+						<a class="text-dark" href="https://paypal.me/abieldev">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-cc-paypal mr-1"></i>
+							</span>
+						</a>
+						<hr>
+						<p>Copyright (c) 2019 Copyright <a class="text-danger" href="#">AbielDev.io</a> All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>		
+		<script defer src="fontawesome/js/all.js"></script>
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/js/bootstrap.bundle.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

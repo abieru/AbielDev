@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		{% load static %}
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="shortcut icon" href="{% static 'core/img/code-solid.svg' %}">
+		<link rel="stylesheet" href="{% static 'core/vendor/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+		<script src="https://unpkg.com/scrollreveal"></script>
+	</head>
+	<body>
+		<nav class="nasbal sticky-top navbar navbar-expand-lg navbar-dark bg-secondary ">
+			<div class="container">
+				<span style="color: Tomato; font-size: 30px">
+					<i class="fas fa-code"></i>
+					<a class="navbar-brand text-light" href="#">AbielDev</a>
+				</span>
+			  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    	<span class="navbar-toggler-icon"></span>
+			  	</button>
+			  	<div class="collapse navbar-collapse" id="navbarNav">
+			    	<ul class="navbar-nav ml-auto">
+				      	<li class="nav-item  {% if request.path == '/' %} active {% endif %}">
+				        	<a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+				      	</li>
+				      	<li class="nav-item {% if request.path == '/about/' %} active {% endif %}">
+				        	<a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> Acerca de</a>	  
+				      	</li>
+			    	</ul>
+				  	<div class="dropdown">
+					  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    	<span style="color: Tomato"><i class="fas fa-folder"></i></span>
+					    	Proyectos
+					  </button>
+					  	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						    <a class="dropdown-item {% if not request.path == '/money/' %} text-danger {% endif %}{% if request.path == '/money/' %} text-secondary {% endif %}" href="{% url 'money' %}"><i class="fab fa-bitcoin {% if request.path == '/money/' %}fa-spin{% endif %}"></i> EL DolarDeHoy</a>	
+						    <a class="dropdown-item text-danger" href="#"><i class="fas fa-rocket"></i> Fotos de la Nasa</a>
+						    <a class="dropdown-item text-danger" href="#">proyecto 3</a>
+						</div>
+					</div>			    	
+			  	</div>
+			</div>
+		</nav>
+		{% block content %}{% endblock %}				
+		<hr class="container">
+		<footer class="mb-auto py-3">
+			<div class="container p-3">
+				<div class="row">
+					<div class="col-md-5 ml-auto">
+						<h3 class="d-block">Contactos.</h3>
+						<a class="text-dark" href="https://github.com/4bi3l">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-github mr-1"></i>
+							</span>
+						</a>
+						<a class="text-dark" href="https://www.linkedin.com/in/abiel-arcila-9a9304146">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-linkedin mr-1"></i>
+							</span>
+						</a>
+						<a class="text-dark" href="https://t.me/abiel13">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-telegram mr-1"></i>
+							</span>
+						</a>
+
+						<a class="text-dark" href="https://paypal.me/abieldev">
+							<span style="font-size: 48px; color: Tomato">
+								<i class="fab fa-cc-paypal mr-1"></i>
+							</span>
+						</a>
+						<hr>
+						{% block terceros %}{% endblock %}
+						<p>Copyright (c) 2019 Copyright <a class="text-danger" href="#">AbielDev.io</a> All Rights Reserved.</p>
+					</div>
+					
+				</div>
+			</div>
+		</footer>		
+		<script defer src="{% static 'core/fontawesome/js/all.js' %}"></script>
+		<script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'core/vendor/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'core/js/main.js' %}"></script>
+	</body>
+</html>

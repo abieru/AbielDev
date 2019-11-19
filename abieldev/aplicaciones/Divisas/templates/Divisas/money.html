@@ -1,0 +1,75 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}AbielDev | CryptoMonedas{% endblock %}
+{% block content %} 
+	<div class="container">
+		<div class="row mt-2">
+			<div class="col-md-6">
+				<div class="card my-5 tarjeta">
+			  		<div class="card-body titulo-bit">
+				    	<h1 class="text-dark">Aqui podras ver el precio de varias monedas y criptomonedas.</h1>
+				  	</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 dolar-ves">
+						<H6 class="border-right ml-1"><i class="fas fa-dollar-sign"></i> USD en VES<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{precio_dolar}}</strong></H6>
+					</div>
+					<div class="col-md-4 btc-ves">
+						<H6 class="border-right ml-1"><i class="fab fa-bitcoin fa-spin"></i> BTC en VES<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{btc_in_bs}}</strong></H6>
+					</div>
+					<div class="col-md-4 btc-usd">
+						<H6 class="border-right ml-1"><i class="fab fa-bitcoin fa-spin"></i> BTC en USD<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{btc_in_usd}}</strong></H6>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="my-5">
+					<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+					    <div class="dropdown-menu">
+					      <a class="dropdown-item" href="#">Action</a>
+					      <a class="dropdown-item" href="#">Another action</a>
+					      <a class="dropdown-item" href="#">Something else here</a>
+					      <div role="separator" class="dropdown-divider"></div>
+					      <a class="dropdown-item" href="#">Separated link</a>
+					    </div>
+					  </div>
+					  <input type="number" class="form-control" placeholder="Introduce la cantidad a cambiar" aria-label="Text input with dropdown button">
+					</div>
+					<div class="input-group">
+					  <input type="number" class="form-control" placeholder="El valor del cambio" aria-label="Text input with dropdown button">
+					  <div class="input-group-append">
+					    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VES</button>
+					    <div class="dropdown-menu">
+					      <a class="dropdown-item" href="#">Action</a>
+					      <a class="dropdown-item" href="#">Another action</a>
+					      <a class="dropdown-item" href="#">Something else here</a>
+					      <div role="separator" class="dropdown-divider"></div>
+					      <a class="dropdown-item" href="#">Separated link</a>
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="d-flex justify-content-center">
+							<img src="{% static 'core/img/icon/svg/001-bitcoin.svg' %}" class="bitcoin-svg mr-3" height="80px" width="80px" alt="bitcoin">
+							<img src="{% static 'core/img/icon/svg/003-litecoin.svg' %}" class="litecoin-svg mr-3" height="80px" width="80px" alt="litecoin">
+							<img src="{% static 'core/img/icon/svg/004-monero.svg' %}" class="monero-svg mr-3" height="80px" width="80px" alt="monero">
+							<img src="{% static 'core/img/icon/svg/005-dash.svg' %}" class="dash-svg mr-3" height="80px" width="80px" alt="dash">
+						</div>
+						<div class="alert alert-info mt-2 text-center" role="alert">
+  							El precio de cualquier moneda en tiempo real!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+{% block terceros %}
+<div>Iconos diseñados por <a href="https://www.flaticon.es/autores/dinosoftlabs" class="text-danger" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.es/" class="text-danger" title="Flaticon">www.flaticon.es</a></div>
+{% endblock %}
