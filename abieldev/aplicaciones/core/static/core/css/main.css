@@ -1,12 +1,11 @@
-
+/*home */
 header {
 	background: #f1f1f1;
 }
- 
+
+/*--------Poyectos------- */
+
+/*Conversor de monedas */
 .tarjeta {
 	background: #f1f1f1;
-}
-
-.imgbg {
-	background: url(../img/wallpaperExchange1.png);
 }
