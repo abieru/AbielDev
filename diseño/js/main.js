@@ -39,3 +39,4 @@ sr.reveal('.img3', {
 	origin: 'bottom',
 	distance: '300px'
 });
+

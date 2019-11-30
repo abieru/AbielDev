@@ -11,9 +11,9 @@
 		<script src="https://unpkg.com/scrollreveal"></script>
 	</head>
 	<body>
-		<nav class="nasbal sticky-top navbar navbar-expand-lg navbar-dark bg-secondary ">
+		<nav class="nasbal {% if request.path != '/post/' %} sticky-top {% endif %} navbar navbar-expand-sm navbar-dark bg-secondary ">
 			<div class="container">
-				<span style="color: Tomato; font-size: 30px">
+				<span style="color: Tomato; font-size: 26px">
 					<i class="fas fa-code"></i>
 					<a class="navbar-brand text-light" href="#">AbielDev</a>
 				</span>
@@ -35,8 +35,8 @@
 					    	Proyectos
 					  </button>
 					  	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						    <a class="dropdown-item {% if not request.path == '/money/' %} text-danger {% endif %}{% if request.path == '/money/' %} text-secondary {% endif %}" href="{% url 'money' %}"><i class="fab fa-bitcoin {% if request.path == '/money/' %}fa-spin{% endif %}"></i> EL DolarDeHoy</a>	
-						    <a class="dropdown-item text-danger" href="#"><i class="fas fa-rocket"></i> Fotos de la Nasa</a>
+						    <a class="dropdown-item {% if not request.path == '/money/' %} text-danger {% endif %}{% if request.path == '/money/' %} text-secondary {% endif %}" href="{% url 'money' %}"><i class="fab fa-bitcoin {% if request.path == '/money/' %}fa-spin{% endif %}"></i> CryptoPrice</a>	
+						    <a class="dropdown-item text-danger" href="#"><i class="fab fa-facebook-square"></i> Fakebook</a>
 						    <a class="dropdown-item text-danger" href="#">proyecto 3</a>
 						</div>
 					</div>			    	
@@ -45,7 +45,7 @@
 		</nav>
 		{% block content %}{% endblock %}				
 		<hr class="container">
-		<footer class="mb-auto py-3">
+		<footer class="mb-auto py-3" id="copy">
 			<div class="container p-3">
 				<div class="row">
 					<div class="col-md-5 ml-auto">
@@ -73,16 +73,28 @@
 						</a>
 						<hr>
 						{% block terceros %}{% endblock %}
-						<p>Copyright (c) 2019 Copyright <a class="text-danger" href="#">AbielDev.io</a> All Rights Reserved.</p>
+						{% verbatim %}
+						<p>Copyright (c) {{ fecha.getFullYear() }} Copyright <a class="text-danger" href="#">AbielDev.io</a> All Rights Reserved.</p>
+						{% endverbatim %}
 					</div>
 					
 				</div>
 			</div>
 		</footer>
-		{% block js %}{% endblock %}	
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>	
 		<script defer src="{% static 'core/fontawesome/js/all.js' %}"></script>
 		<script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
 		<script src="{% static 'core/vendor/js/bootstrap.bundle.min.js' %}"></script>
 		<script src="{% static 'core/js/main.js' %}"></script>
+		{% block js %}{% endblock %}
+		<script>
+			new Vue({
+				el: "#copy",
+				data: {
+					fecha: new Date()
+				}
+			});
+		</script>
 	</body>
 </html>

@@ -2,80 +2,77 @@
 {% load static %}
 {% block title %}AbielDev | CryptoMonedas{% endblock %}
 {% block content %} 
-<script src="{% static 'core/js/conversor.js' %}"></script>
-	<div class="container"> 
-		<div class="row mt-2"> 
-			<div class="col-md-6">
-				<div class="card my-5 tarjeta">
-			  		<div class="card-body titulo-bit">
-				    	<h2 class="text-secondary">Precio de cualquier moneda o cryptomoneda en tiempo real.</h2>
-				  	</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="d-flex justify-content-center">
-							<h6 class="text-center border-right pr-3 ml-1 mr-2"><i class="fas fa-dollar-sign"></i> USD en VES<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{precio_dolar}}</strong></h6>
-							<h6 class="text-center border-right pr-3 ml-1 mr-2"><i class="fab fa-bitcoin"></i> BTC en VES<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{btc_in_bs}}</strong></h6>
-							<h6 class="text-center border-right pr-3 ml-1 mr-2"><i class="fab fa-bitcoin"></i> BTC en USD<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{btc_in_usd}}</strong></h6>
-						</div>
-					</div>
-				</div>
+
+<div class="container"> 
+	<div class="row mt-2"> 
+		<div class="col-md-6">
+			<div class="card my-5 tarjeta">
+		  		<div class="card-body titulo-bit">
+			    	<h2 class="text-secondary">Precio de cualquier moneda o cryptomoneda en tiempo real.</h2>
+			  	</div>
 			</div>
-			<div class="col-md-6">
-				<div class="my-5">
-					<div class="input-group mb-3">
-					  <div class="input-group-prepend">
-					    <button id="seleccion" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
-					    <div class="dropdown-menu">
-					      <a onclick="seleccion('USD')" id="USD"  class="dropdown-item" type="button">Dolares</a>
-					      <a onclick="seleccion('VES')" id="VES" class="dropdown-item" type="button">Bolivares</a>
-					      <a onclick="seleccion('LTC')" id="LTC" class="dropdown-item" type="button">Litecoin</a>
-					      <a onclick="seleccion('BTC')" id="BTC" class="dropdown-item" type="button">Bitcoin</a>
-					      <a onclick="seleccion('DOGE')" id="DOGE" class="dropdown-item" type="button">Dogecoin</a>
-					      <a onclick="seleccion('XMR')" id="XMR" class="dropdown-item" type="button">Monero</a>
-					      <a onclick="seleccion('DASH')" id="DASH" class="dropdown-item" type="button">Dash</a>
-					      <a onclick="seleccion('ETH')" id="ETH" class="dropdown-item" type="button">Ethereum</a>
-					    </div>
-					  </div>
-					  <input type="number" id="input1" class="form-control" placeholder="Introduce la cantidad a cambiar" aria-label="Text input with dropdown button" oninput="input1({{precio_dolar}})" onchange="input1({{precio_dolar}})">
-					</div> 
-					<div class="input-group">
-					  <input type="text" id="salida" value="" class="form-control" placeholder="El valor del cambio" aria-label="Text input with dropdown button" disabled>
-					  <div class="input-group-append">
-					    <button id="seleccion1" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VES</button>
-					    <div class="dropdown-menu">
-					      <a onclick="seleccion1('USD ')" id="USD " class="dropdown-item" type="button">Dolares</a>
-					      <a onclick="seleccion1('VES ')" id="VES " class="dropdown-item" type="button">Bolivares</a>
-					      <a onclick="seleccion1('LTC ')" id="LTC " class="dropdown-item" type="button">Litecoin</a>
-					      <a onclick="seleccion1('BTC ')" id="BTC " class="dropdown-item" type="button">Bitcoin</a>
-					      <a onclick="seleccion1('DOGE ')" id="DOGE " class="dropdown-item" type="button">Dogecoin</a>
-					      <a onclick="seleccion1('XMR ')" id="XMR " class="dropdown-item" type="button">Monero</a>
-					      <a onclick="seleccion1('DASH ')" id="DASH " class="dropdown-item" type="button">Dash</a>
-					      <a onclick="seleccion1('ETH ')" id="ETH " class="dropdown-item" type="button">Ethereum</a>
-					    </div>
-					  </div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="d-flex justify-content-center">
-							<img src="{% static 'core/img/icon/svg/001-bitcoin.svg' %}" class="bitcoin-svg mr-3" height="80px" width="80px" alt="bitcoin">
-							<img src="{% static 'core/img/icon/svg/003-litecoin.svg' %}" class="litecoin-svg mr-3" height="80px" width="80px" alt="litecoin">
-							<img src="{% static 'core/img/icon/svg/004-monero.svg' %}" class="monero-svg mr-3" height="80px" width="80px" alt="monero">
-							<img src="{% static 'core/img/icon/svg/005-dash.svg' %}" class="dash-svg mr-3" height="80px" width="80px" alt="dash">
-						</div>
-						<div class="alert alert-info mt-2 text-center" role="alert">
-  							El precio de cualquier moneda en tiempo real!
-						</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="d-flex justify-content-center">
+						<h6 class="text-center border-right pr-3 ml-1 mr-2"><i class="fas fa-dollar-sign"></i> USD en VES<br class="mb-1"><strong  class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{usd_in_ves}}</strong></h6>
+						<h6 class="text-center border-right pr-3 ml-1 mr-2"><i class="fab fa-bitcoin"></i> BTC en VES<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{btc_in_bs}}</strong></h6>
+						<h6 class="text-center border-right pr-3 ml-1 mr-2"><i class="fab fa-bitcoin"></i> BTC en USD<br class="mb-1"><strong class="text-danger"><i class="far fa-money-bill-alt mr-1"></i>{{btc_in_usd}}</strong></h6>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>	
+		<div class="col-md-6">
+			<div id="conversor" class="my-5">
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+            <select v-model="from" id="seleccion" class="input-group-text" name="" id="">
+              {% verbatim %}
+                <option v-for="moneda in monedas" class="btn" type="button">
+                	{{moneda}}
+                </option>
+              {% endverbatim %}
+            </select>
+				  </div>
+				  <input v-model="cantidad" type="number" id="input1" class="form-control" placeholder="Introduce la cantidad a cambiar" aria-label="Text input with dropdown button" @focusout="convertirmoneda" @change="convertirmoneda">
+				</div> 
+				<div class="input-group">
+				  {% verbatim %}<input v-model="calcularResultado" type="text" id="salida" class="form-control" placeholder="El valor del cambio" aria-label="Text input with dropdown button" disabled>{% endverbatim %}
+				  
+				  <div class="input-group-append">
+            <select id="seleccion1" v-model="to" class="input-group-text" name="" id="">
+              {% verbatim %}
+                <option v-for="moneda in monedas" class="btn" type="button">
+                	{{moneda}}
+                </option>
+              {% endverbatim %}
+            </select>
+				  </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="d-flex justify-content-center">
+						<img src="{% static 'core/img/icon/svg/001-bitcoin.svg' %}" class="bitcoin-svg mr-3" height="80px" width="80px" alt="bitcoin">
+						<img src="{% static 'core/img/icon/svg/003-litecoin.svg' %}" class="litecoin-svg mr-3" height="80px" width="80px" alt="litecoin">
+						<img src="{% static 'core/img/icon/svg/004-monero.svg' %}" class="monero-svg mr-3" height="80px" width="80px" alt="monero">
+						<img src="{% static 'core/img/icon/svg/005-dash.svg' %}" class="dash-svg mr-3" height="80px" width="80px" alt="dash">
+					</div>
+					<div class="alert alert-info mt-2 text-center" role="alert">
+						El precio de cualquier moneda en tiempo real!
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
 {% block terceros %}
 <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/dinosoftlabs" class="text-danger" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.es/" class="text-danger" title="Flaticon">www.flaticon.es</a></div>
 {% endblock %}
 {% block js %}
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="{% static 'core/js/conversor.js' %}"></script>
+<script type="text/javascript">
+</script>
 {% endblock %}
+

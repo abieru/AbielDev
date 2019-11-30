@@ -26,12 +26,13 @@ def BtcInUsd():
 """
 
 #cambio el tiempo real
+
+
 def Dolartoday():
 	with urllib.request.urlopen(f"https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=VES&api_key=dc1bab01a536aaec3593f72a057f8494701868e70a3a6ea6005e6a5e4b70b29e") as url:
 		data = json.loads(url.read().decode())
 		price = data['VES']
 		return round(float(price))
-
 
 def BtcInVes():
 	with urllib.request.urlopen(f"https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=VES&api_key=dc1bab01a536aaec3593f72a057f8494701868e70a3a6ea6005e6a5e4b70b29e") as url:
@@ -44,10 +45,4 @@ def BtcInUsd():
 		data = json.loads(url.read().decode())
 		price = data['USD']
 		return round(float(price))
-
-def AllCoin():
-	with urllib.request.urlopen(f"https://min-api.cryptocompare.com/data/all/coinlist&api_key=dc1bab01a536aaec3593f72a057f8494701868e70a3a6ea6005e6a5e4b70b29e") as url:
-		data = json.loads(url.read().decode())
-		price = data['Data']
-		return price
 

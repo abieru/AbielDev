@@ -5,14 +5,12 @@ from .apis.api_localbit import *
 
 
 
-
-
 class MoneyPageView(TemplateView):
     template_name = "Divisas/money.html" 
 
     def get(self, request, *args, **kwargs):
     	context = locals()
-    	context['precio_dolar'] = Dolartoday()
+    	context['usd_in_ves'] = Dolartoday()
     	context['btc_in_bs'] = BtcInVes()
     	context['btc_in_usd'] = BtcInUsd()
     	return render(request, self.template_name, context)
